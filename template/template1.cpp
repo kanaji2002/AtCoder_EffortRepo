@@ -1,12 +1,18 @@
 #include <bits/stdc++.h>
+#include <map>
 using namespace std;
 
 int main() {
-    string S;
-    cin >> S;
-    int res = 0;
-    if (S[0] == '1') ++res;
-    if (S[1] == '1') ++res;
-    if (S[2] == '1') ++res;
-    cout << res << endl;
+    int value[]={1,2, 3, 4, 2, 3, 4, 5,2, 1};
+        // 数え上げ
+    map<int, int> count;
+     for (auto v :value){
+         count[v] += 1;
+    }
+    
+        // 結果可視化
+    for (auto [k, v] :count){
+    cout << k << ":" << v << endl;
+    }
+    
 }
