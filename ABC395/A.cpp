@@ -22,7 +22,7 @@ for(i=0;i<N;i++){
     }
     
 }
-cout << "Yes";
+cout << "Yesu";
 
 
 return 0;
