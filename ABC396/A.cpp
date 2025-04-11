@@ -9,7 +9,7 @@ int main() {
         int a[100];
         cin >> a[i] ;
         if (a[i]==a[i-1] && a[i]==a[i-2]){
-            cout << "Yes" << endl;
+            cout << "Yesss" << endl;
             return 0;
         }
         if(i==n){
