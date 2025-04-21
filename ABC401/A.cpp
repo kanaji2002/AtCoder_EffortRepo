@@ -4,15 +4,21 @@ using namespace std;
 using ll = long long;
 
 int main(){
-
+  // 100 以上 
+  // 999 以下の整数 
+  // S が与えられます。
+  
+  // S が 
+  // 200 以上 
+  // 299 以下のとき Success 、そうでないとき Failure と出力してください。
+  
+  // 制約
 int N,R;
 cin >> N ;
 
-if(400%N==0)
-  cout << 400/N << endl;
+if(200 <=N && N <=299)
+cout << "Success" << endl;
 else
-cout << -1 << endl;
-cout << 0 << endl;
-
+cout << "Failure" << endl;
 return 0;
 }
