@@ -12,7 +12,7 @@ if(400%N==0)
   cout << 400/N << endl;
 else
 cout << -1 << endl;
-
+cout << 0 << endl;
 
 return 0;
 }
