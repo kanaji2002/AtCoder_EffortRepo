@@ -8,20 +8,25 @@ using ll = long long;
 #define rep(i,n) for(long long i=0; i<n; i++)
 int main() {
 
-int n,k;
-cin >> n >> k;
-set<int> st;
-rep(i,n){
-  int a;
+
+ll N,K;
+cin >> N >> K;
+set<ll> s;
+ll ans = K*(K+1)/2;
+
+rep(i,N){
+  ll a;
   cin >> a;
-  if(a<=k)st.insert(a);
-  
+     // 値の追加（重複は無視される）
+  s.insert(a);
+ 
+}
+for(auto x : s){
+  if(x<=K)
+   ans -= x;
 }
 
-ll ans = (ll)k*(k+1)/2;
-for(int i: st)ans -= i;
-cout << ans <<end;
-
+cout << ans << endl;
 
 
 return 0;
