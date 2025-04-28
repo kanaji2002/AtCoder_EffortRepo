@@ -1,27 +1,49 @@
 #include <iostream>
 #include <bits/stdc++.h>
 #include <vector>
+#include <map>
+#include <algorithm> // count を使うため
 using namespace std;
-#define rep(i,n) for(int i=0; i<n; i++)
-
-
+using ll = long long;
+#define rep(i,n) for(long long i=0; i<n; i++)
 int main() {
+
+int N,Q;
+cin >> N >> Q;
+int ans=0;
+vector<int> cnt(N+1,1);
+cnt[0]=0;
+vector<int> pos(N+1);
+for(int i=0;i<=N; i++){
+  pos[i]=i;
+}
+
+rep(i,Q){
+  int type;
   
+cin >> type;
+if(type==1){
+    int P,H;
+    cin >> P >> H;
 
-int n,k;
-cin >> n >> k ;
-vector<int> a(n);
-rep(i,n){
-  cin >> a[i];
-}
-sort(a.begin(),a.end());
-int ans=1e9;
+    if(cnt[pos[P]]==2){
+      --ans;
+    }
+    --cnt[pos[P]];
+    pos[P]=H;
+    cnt[pos[P]]+=1;
+    if(cnt[pos[P]]==2){
+      ans++;
+    }
 
-rep(l,k+1){
-  int r = l+(n-k)-1;
-  int now=a[r]-a[l];
-  ans = min(ans,now);
+
+}else {
+  cout << ans << endl;
 }
-cout << ans << endl;
-    return 0;
+
+}
+
+
+
+return 0;
 }
