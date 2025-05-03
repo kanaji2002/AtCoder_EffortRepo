@@ -19,23 +19,17 @@ int N, M;
 
 
 int main() {
-  
-    int n,m;
-    cin >> n >> m;
-    int ans = 0;
-    dsu uf(n);
-    rep(i,m){
-      int a,b;
-      cin >> a >> b;
-      a--; b--;
-      if(uf.same(a,b)){
-        ans++;
-        continue;
-      
-      }  uf.merge(a,b);
-    }
-   cout << ans << endl; 
+vector<int> a(3);
+rep(i,3){
+  cin >> a[i];}
+   sort(a.begin(), a.end());
+
+if(a[2]==a[1]*a[0])
+cout << "Yes" <<endl;
+else
+cout << "No" <<endl;
+
+
 
     return 0;
 }
-

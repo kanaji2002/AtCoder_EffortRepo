@@ -19,23 +19,20 @@ int N, M;
 
 
 int main() {
-  
-    int n,m;
-    cin >> n >> m;
-    int ans = 0;
-    dsu uf(n);
-    rep(i,m){
-      int a,b;
-      cin >> a >> b;
-      a--; b--;
-      if(uf.same(a,b)){
-        ans++;
-        continue;
-      
-      }  uf.merge(a,b);
-    }
-   cout << ans << endl; 
+vector<int> mem(10,0);
+int n;
+cin >> n;
+while(n>0){
+  mem[n%10]++;
+  n/=10;
+}
+
+if(mem[1]==1 && mem[2]==2 && mem[3]==3)
+cout <<"Yes" <<endl;
+else
+cout <<"No" <<endl;
+
+
 
     return 0;
 }
-
