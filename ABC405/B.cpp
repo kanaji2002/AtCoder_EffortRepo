@@ -7,6 +7,8 @@
 using namespace atcoder;
 using namespace std;
 
+//簡単なやり型がある．関数？？
+
 #define rep(i,n) for(int i=0; i<n; i++)
 
 int main() {
@@ -78,6 +80,8 @@ int count0 = 0,count1=0,count2=0,count3=0;
      if(T[i][j] != S[j][N - 1 - i])count3++;
     }
   }
+
+
 
 int count =0;
 int temc = min(min(count0, count1+1), min(count2+2, count3+3));
