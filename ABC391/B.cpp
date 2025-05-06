@@ -1,40 +1,36 @@
-// x1,y1,z1,x2,y2,z2 = map(int,input().split())
-// x3,y3,z3,x4,y4,z4 = map(int,input().split())
-// def f(l1,r1,l2,r2):
-//   # [l1,r1] と [l2,r2] の共通部分の長さが正ならTrue
-//   return not (r1<=l2 or r2<=l1)
-// if f(x1,x2,x3,x4) and f(y1,y2,y3,y4) and f(z1,z2,z3,z4):
-//   print("Yes")
-// else:
-//   print("No")
-
 #include <iostream>
+#include <bits/stdc++.h>
 #include <vector>
+#include <map>
+#include <algorithm>
+#include <atcoder/dsu>
+using namespace atcoder;
 using namespace std;
-
-
-int tem(int l1,int r1,int l2,int r2){
-  // [l1,r1] と [l2,r2] の共通部分の長さが正ならTrue
-  return not (r1<=l2 or r2<=l1);
-}
-
+#define rep(i,n) for(int i=0; i<n; i++)
 
 int main() {
-  
-    int a,b,c,d,e,f,g,h,i,j,k,l;
 
-    cin >> a >> b >> c >> d >> e >> f;
-    cin >> g >> h >> i >> j >> k >> l;
-   
-if(tem(a,d,g,j) && tem(b,e,h,k) && tem(c,f,i,l)){
-   cout << "Yes";
- return 0;
-   }
-   
-  
-  cout << "No";
+int N,M;
+cin >> N >> M;
+vector<string> S(N),T(M);
+for(auto& x: S)cin >>x;
+for(auto& x: T)cin >> x;
+
+for(int a= 0; a<=N-M; ++a){
+  for(int b = 0;b <= N-M; ++b){
+    bool ok=true;
+    for(int i=0;i<M;++i){
+      for(int j=0;j<M;j++){
+        if(S[a+i][b+j] != T[i][j]){
+          ok = false;
+        }
+      }
+    }
+    if(ok){
+      cout << a+1 << " " << b+1 <<endl;
+    }
+  }
+}
 
     return 0;
 }
-
-
