@@ -10,7 +10,8 @@ int main() {
     cin >> a >> b >> c >> d >> e >> f;
     cin >> g >> h >> i >> j >> k >> l;
    
-   if((a<g)&&(g<d)&&(b<h)&&(h<e)&&(c<i)&&(i<f)){
+   if((a<g)&&(g<d)&&(b<h)&&
+   //練習で消したり付け足したりしてます．
    cout << "Yes";
    return 0;
    }
