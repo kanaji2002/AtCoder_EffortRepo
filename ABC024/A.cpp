@@ -13,7 +13,7 @@ int A, B; string S;
 int main() {
 int a,b,c,k,s,t;
 cin >> a >> b >> c >> k >> s >> t;
-
+cout >> s
 int sum=a*s+b*t;
 if((s+t)>= k)
 sum-=(s+t)*c;
