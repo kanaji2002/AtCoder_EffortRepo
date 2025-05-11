@@ -1,50 +1,43 @@
 #include <iostream>
-#include <bits/stdc++.h>
 #include <vector>
 #include <map>
-#include <algorithm>
-#include <atcoder/dsu>
-using namespace atcoder;
+#include <set>
 using namespace std;
 
 #define rep(i,n) for(int i=0; i<n; i++)
+// 累積和を作る
+vector<long long> build_prefix_sum(const vector<long long >& a) {
+    long long n = a.size();
+    vector<long long > s(n + 1, 0); // s[0] = 0 で初期化
+    for (long long i = 0; i < n; ++i) {
+        s[i + 1] = s[i] + a[i];
+    }
+    return s;
+}
+
+// 区間 [i, j] の和を求める
+long long sum_range(vector<long long >& prefix, long long i, long long j) {
+    return prefix[j + 1] - prefix[i];
+}
+
 
 int main() {
-    int N, M;
-    cin >> N >> M;
+long long n=0;
+cin >> n;
+vector<long long> a(n);
+vector<long long> sum(n);
+rep(i,n){
+  cin >> a[i];
+}
 
-    dsu uf(N);
-    bool ok = true;
-    vector<vector<int>> G(N);  // 隣接リスト
-
-    if (N != M) {
-        cout << "No" << endl;
-        return 0;
-    }
-
-    for (int i = 0; i < M; i++) {
-        int u, v;
-        cin >> u >> v;
-        uf.merge(u - 1, v - 1);  // Union-Find
-        --u; --v;  // 0-indexed に揃える
-        G[u].push_back(v);
-        G[v].push_back(u);  // 無向グラフなので両方に追加
-    }
-
-    // 各頂点の次数が2か確認
-    for (int i = 0; i < N; i++) {
-        if (G[i].size() != 2) {
-            cout << "No" << endl;
-            return 0;
-        }
-    }
-
-    // 連結成分が1つかどうか
-    if (uf.groups().size() != 1) {
-        cout << "No" << endl;
-    } else {
-        cout << "Yes" << endl;
-    }
+auto prefix = build_prefix_sum(a);
+long long ans = 0;
+rep(i,n-1){
+  // cout << sum_range(prefix, i+1, n-1) <<endl;
+  ans += a[i]*sum_range(prefix, i+1, n-1);
+}
+cout << ans << endl;
 
     return 0;
 }
+
