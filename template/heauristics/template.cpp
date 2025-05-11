@@ -17,12 +17,29 @@ using P = pair<int,int>;
 template<typename T>
 using priority_queue_rev = priority_queue<T, vector<T>, greater<T>>; //小さいものから取り出す
 
+const int TL = 1950;
+const double T0=2e3;
+const double T1=6e2;
+
+double prob(double delta, double temp){
+    if(delta >= 0) return 1;
+    return exp(delta/temp);
+}
+
 int main(){
-
-    cin >> ;
-
-    cout << ans << endl;
-//  printf("%.10f\n",ans);
-
+    auto start = std::chrono::system_clock::now();      // 計測スタート時刻を保存
+    random_device seed;
+    mt19937_64 mt(seed());
+    uniform_int_distribution<int> rnd1(0,25);
+    uniform_real_distribution<double> rnd2(0,1);
+    
+    while(true){
+        auto end = std::chrono::system_clock::now();       // 計測終了時刻を保存
+        auto dur = end - start;        // 要した時間を計算
+        auto msec = std::chrono::duration_cast<std::chrono::milliseconds>(dur).count();
+        if(msec>=TL) break;
+        T = pow(T0, 1-(double)msec/TL) * pow(T1, (double)msec/TL);
+    }
+    
     return 0;
 }

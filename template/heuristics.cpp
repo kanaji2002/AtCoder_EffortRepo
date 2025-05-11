@@ -1,3 +1,4 @@
+
 #include <bits/stdc++.h>
 #define drep(i,cc,n) for(int i=(cc);i<=(n);++i)
 #define rep(i,n) drep(i,0,n-1)
@@ -17,12 +18,19 @@ using P = pair<int,int>;
 template<typename T>
 using priority_queue_rev = priority_queue<T, vector<T>, greater<T>>; //小さいものから取り出す
 
+const int TL = 1900;
+
 int main(){
+    auto start = std::chrono::system_clock::now();      // 計測スタート時刻を保存
+    random_device seed;
+    mt19937 mt(seed());
+    uniform_int_distribution<int> rnd1(0,25);
 
-    cin >> ;
-
-    cout << ans << endl;
-//  printf("%.10f\n",ans);
+    while(true){
+        auto end = std::chrono::system_clock::now();       // 計測終了時刻を保存
+        auto dur = end - start;        // 要した時間を計算
+        auto msec = std::chrono::duration_cast<std::chrono::milliseconds>(dur).count();
+        if(msec>=TL) break;
 
     return 0;
 }
