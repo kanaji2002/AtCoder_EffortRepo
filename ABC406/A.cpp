@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #include <iostream>
 #include <vector>
 #include <map>
@@ -26,4 +27,6 @@ else cout << "No" <<endl;
 
     return 0;
 }
+=======
+>>>>>>> a94a2199b9b057aa50f187844192c32bc2d9c4c9
 
