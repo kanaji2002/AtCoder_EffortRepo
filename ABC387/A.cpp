@@ -16,4 +16,5 @@ int a,b;
 cin >> a >> b;
 cout << pow((a + b),2) << endl;
 
+cout << endl;
 }
