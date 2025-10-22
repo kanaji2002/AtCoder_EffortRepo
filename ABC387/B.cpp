@@ -17,6 +17,6 @@ rep(i,s.size()){
     if(s[i]=='0')
     cnt++;
 }
-
+cout << cnt << endl;
 return 0;
 }
