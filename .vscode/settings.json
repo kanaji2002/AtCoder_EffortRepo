@@ -3,7 +3,10 @@
     "iostream": "cpp",
     "ostream": "cpp",
     "map": "cpp",
-    "string": "cpp"
+    "string": "cpp",
+    "vector": "cpp",
+    "queue": "cpp",
+    "stack": "cpp"
   },
   "C_Cpp.errorSquiggles": "disabled",
   "C_Cpp_Runner.cCompilerPath": "gcc",
