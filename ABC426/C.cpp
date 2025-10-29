@@ -10,29 +10,32 @@ using ll = long long;
 
 
 int main() {
-map<int,int>mp;
+
    int n,q;
     cin >> n >> q;
-    rep(i,n){
-        mp[i] = 1;
-    }
-    int pos =0;
+    vector<int> cnt(n+1);
+        for(int i=1; i<=n; i++){
+            cnt[i] = 1;
+        }
+  
+    int r = 0;
 
     rep(i,q){
         int x,y;
         cin >> x >> y;
         // pos から，xまで0にして，mp[y]にそれまでの総数を足す．
 
+        int ans = 0;
+        while(r <=x){
+            ans += cnt[r];
+            cnt[r] = 0;
+            r++;
 
-
-
-
-
-
-
-
+        }
+        cnt[y] += ans;
+        cout << ans << endl;
     }
-
+        
 
 
     
